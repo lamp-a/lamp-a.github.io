@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lampa: итоги года</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide-1">Ваши итоги года с Лампой</div>
+        <div class="swiper-slide slide-2">
+          <div class="image-container"></div>
+        </div>
+        <div class="swiper-slide slide-3">
+          <div class="image-container"></div>
+        </div>
+        <div class="swiper-slide slide-4">
+          <div class="image-container"></div>
+        </div>  
+        <div class="swiper-slide slide-5">
+          <div class="image-container"></div>
+        </div>  
+        <div class="swiper-slide slide-6">
+          <div class="image-container"></div>
+        </div>  
+        <div class="swiper-slide slide-7">
+          <div class="image-container"></div>
+        </div>  
+        <div class="swiper-slide slide-8">
+          <div class="image-container"></div>
+        </div>  
+        <div class="swiper-slide slide-9">
+          <div class="image-container"></div>
+        </div>  
+        <div class="swiper-slide slide-10">
+          <div class="image-container"></div>
+        </div>  
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
