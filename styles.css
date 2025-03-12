@@ -7,7 +7,7 @@ body {
 body {
   background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   color: #000;
   margin: 0;
   padding: 0;
@@ -42,10 +42,15 @@ body {
   color: white; /* Белый цвет текста */
 }
 
+.caption {
+  font-size: 2rem;
+}
+
 .swiper-slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  max-width: 80%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -59,7 +64,7 @@ body {
 }
 
 .slide-2 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12373972/3aff6a13-2374-44bb-a84b-dac69f7fe74b/orig');
+  background-image: url('https://avatars.mds.yandex.net/get-lpc/1635340/fda97e6a-3a49-4450-8a60-ab0a6bd477f2/orig');
 }
 
 .slide-3 {
@@ -67,7 +72,7 @@ body {
 }
 
 .slide-4 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/1635340/285b0467-b782-470c-bad7-988748c2230e/orig');
+  background-image: url('https://avatars.mds.yandex.net/get-lpc/12602567/c857cee5-90a7-4bdf-b559-a72a63d64b80/orig');
 }
 
 .slide-5 {
@@ -79,15 +84,27 @@ body {
 }
 
 .slide-7 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/9736426/7d9bd223-3bba-4b70-87ec-6bb3b281ff9c/orig');
+  background-image: url('https://avatars.mds.yandex.net/get-lpc/12373972/f2a26bb4-10fe-4431-afea-efee257896e1/orig');
 }
 
 .slide-8 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12373972/3aff6a13-2374-44bb-a84b-dac69f7fe74b/orig');
+  background-image: url('https://avatars.mds.yandex.net/get-lpc/12373972/2c3b1613-f9f5-4a11-82bb-d999b94b662b/orig');
 }
 
 .slide-9 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12373972/46155a4c-ecc4-465f-b07f-44d3d6aab1f3/orig');
+  background-image: url('https://avatars.mds.yandex.net/get-lpc/12602567/26106185-e1c2-4b98-ad9e-bf25e8a0f3c4/orig');
+}
+
+.slide-10 {
+  background-image: url('https://avatars.mds.yandex.net/get-lpc/1635340/321a4223-b551-4412-8dd8-a69b9dd0fd4c/orig');
+}
+
+.slide-11 {
+  background-image: url('https://avatars.mds.yandex.net/get-lpc/1635340/72e1caa1-aaf3-4803-9bec-7ec458c38af1/orig');
+}
+
+.slide-12 {
+  background-image: url('https://avatars.mds.yandex.net/get-lpc/10116223/a9d9ebff-0865-428b-ad27-f189c77d9746/orig');
 }
 
 /* Изменяем цвет кнопок и пагинации на белый */
@@ -107,9 +124,7 @@ body {
 .image-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  padding: 0 20px;
+  padding: 2rem;
 }
 
 .image-container a {
@@ -123,25 +138,12 @@ body {
   cursor: pointer;
 }
 
-.one-img {
-  max-width: 80%;
-  margin-bottom: 20px;
-}
-
 .large-text {
-  font-size: 72px;
+  font-size: 10rem;
   font-weight: bold;
-  margin: 10px 0;
 }
 
-.bottom-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 40px;
-}
-
-.gray-text {
-  color: gray;
-  margin-top: 10px;
+.title-text {
+  font-size: 3rem;
+  font-weight: bold;
 }
