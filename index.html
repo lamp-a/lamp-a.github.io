@@ -18,34 +18,96 @@
     <!-- Swiper -->
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide slide-1">Ваши итоги года с Лампой</div>
+        <div class="swiper-slide slide-1 title-text">
+          Ваши итоги <span id="span-year"></span> года с Лампой
+        </div>
         <div class="swiper-slide slide-2">
-          <div class="image-container"></div>
+          <div class="image-container">
+            <img id="img-firstMovieOfYear-movie-i" />
+          </div>
+          <div class="caption">
+            <span id="span-firstMovieOfYear-date"></span> вы посмотрели первый фильм в <span id="span-firstMovieOfYear-year"></span> году
+          </div>
         </div>
         <div class="swiper-slide slide-3">
-          <div class="image-container"></div>
+          <div class="caption">вы смотрели фильмы</div>
+          <div class="large-text"><span id="span-totalTime"></span></div>
+          <div class="caption">часов</div>
         </div>
         <div class="swiper-slide slide-4">
-          <div class="image-container"></div>
-        </div>  
+          <div class="image-container">
+            <a id="link-watchedMovies-examples0" target="_blank">
+              <img id="img-watchedMovies-examples0-i" />
+            </a>
+            <a id="link-watchedMovies-examples1" target="_blank">
+              <img id="img-watchedMovies-examples1-i" />
+            </a>
+            <a id="link-watchedMovies-examples2" target="_blank">
+              <img id="img-watchedMovies-examples2-i" />
+            </a>
+          </div>
+          <div class="caption">вы посмотрели <span id="span-watchedMovies-count"></span> фильмов</div>
+        </div>
         <div class="swiper-slide slide-5">
-          <div class="image-container"></div>
-        </div>  
+          <div class="large-text"><span id="span-moviesWithReactions"></span></div>
+          <div class="caption">реакций вы поставили</div>
+        </div>
         <div class="swiper-slide slide-6">
-          <div class="image-container"></div>
-        </div>  
+          <div class="large-text"><span id="span-mostPopularReaction"></span></div>
+          <div class="caption">самая частая ваша реакция</div>
+        </div>
         <div class="swiper-slide slide-7">
-          <div class="image-container"></div>
-        </div>  
+          <div class="image-container">
+            <a id="link-topGenre-examples0" target="_blank">
+              <img id="img-topGenre-examples0-i" />
+            </a>
+            <a id="link-topGenre-examples1" target="_blank">
+              <img id="img-topGenre-examples1-i" />
+            </a>
+            <a id="link-topGenre-examples2" target="_blank">
+              <img id="img-topGenre-examples2-i" />
+            </a>
+          </div>
+          <div class="caption">
+            <span id="span-topGenre-genre"></span> - чаще всего вы смотрели кино этого жанра
+          </div>
+        </div>
         <div class="swiper-slide slide-8">
-          <div class="image-container"></div>
-        </div>  
+          <div class="large-text"><span id="span-mostPopularDay"></span></div>
+          <div class="caption">больше всего фильмов вы просмотрели в этот день</div>
+        </div>
         <div class="swiper-slide slide-9">
-          <div class="image-container"></div>
-        </div>  
+          <div class="large-text"><span id="span-mostPopularMonth"></span></div>
+          <div class="caption">больше всего фильмов вы просмотрели в этом месяце</div>
+        </div>
         <div class="swiper-slide slide-10">
-          <div class="image-container"></div>
-        </div>  
+          <div class="image-container">
+            <img id="img-maxTimeMovie-movie-i" />
+          </div>
+          <div class="caption">
+            <span id="span-maxTimeMovie-time"></span> длился ваш самый длинный фильм этого года
+          </div>
+        </div>
+        <div class="swiper-slide slide-11">
+          <div class="caption">
+            <span id="span-unwatchedMovies-count"></span> фильмов вы начали смотреть, но не досмотрели :(
+          </div>
+          <div class="image-container">
+            <a id="link-unwatchedMovies-examples0" target="_blank">
+              <img id="img-unwatchedMovies-examples0-i" />
+            </a>
+            <a id="link-unwatchedMovies-examples1" target="_blank">
+              <img id="img-unwatchedMovies-examples1-i" />
+            </a>
+            <a id="link-unwatchedMovies-examples2" target="_blank">
+              <img id="img-unwatchedMovies-examples2-i" />
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide slide-12">
+          <div class="large-text"><span id="span-cardsViewedOnly-count"></span></div>
+          <div class="caption">карточек вы посмотрели, но кино не стали смотреть</div>
+        </div>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -67,8 +129,69 @@
           prevEl: ".swiper-button-prev",
         },
       });
-    </script>
+    </script>    
+    <script src="data.js"></script>
+    <script>
+      function replaceValues() {
+        document.getElementById('span-year').innerHTML = json.year;
+        document.getElementById('span-firstMovieOfYear-year').innerHTML = json.year;
+        document.getElementById('span-firstMovieOfYear-date').innerHTML = json.firstMovieOfYear.date;
+        document.getElementById('span-totalTime').innerHTML = json.totalTime;
+        document.getElementById('span-watchedMovies-count').innerHTML = json.watchedMovies.count;
+        document.getElementById('span-moviesWithReactions').innerHTML = json.moviesWithReactions;
+        document.getElementById('span-mostPopularReaction').innerHTML = json.mostPopularReaction;
+        document.getElementById('span-topGenre-genre').innerHTML = json.topGenre.genre.join(', ');
+        document.getElementById('span-mostPopularDay').innerHTML = json.mostPopularDay;
+        document.getElementById('span-mostPopularMonth').innerHTML = json.mostPopularMonth;
+        document.getElementById('span-maxTimeMovie-time').innerHTML = json.maxTimeMovie.time;
+        document.getElementById('span-unwatchedMovies-count').innerHTML = json.unwatchedMovies.count;
+        document.getElementById('span-cardsViewedOnly-count').innerHTML = json.cardsViewedOnly.count;
 
-    <script src="scripts.js"></script>
+        document.getElementById('img-firstMovieOfYear-movie-i').src = json.firstMovieOfYear.movie.i;
+        document.getElementById('img-maxTimeMovie-movie-i').src = json.maxTimeMovie.movie.i;
+
+        if (json.watchedMovies.examples[0]) {
+          document.getElementById('img-watchedMovies-examples0-i').src = json.watchedMovies.examples[0].i;
+          document.getElementById('link-watchedMovies-examples0').href = `http://localhost:3000/?card=${json.watchedMovies.examples[0].id}`;
+        }
+        if (json.watchedMovies.examples[1]) {
+          document.getElementById('img-watchedMovies-examples1-i').src = json.watchedMovies.examples[1].i;
+          document.getElementById('link-watchedMovies-examples1').href = `http://localhost:3000/?card=${json.watchedMovies.examples[1].id}`;
+        }
+        if (json.watchedMovies.examples[2]) {
+          document.getElementById('img-watchedMovies-examples2-i').src = json.watchedMovies.examples[2].i;
+          document.getElementById('link-watchedMovies-examples2').href = `http://localhost:3000/?card=${json.watchedMovies.examples[2].id}`;
+        }
+
+        if (json.topGenre.examples[0]) {
+          document.getElementById('img-topGenre-examples0-i').src = json.topGenre.examples[0].i;
+          document.getElementById('link-topGenre-examples0').href = `http://localhost:3000/?card=${json.topGenre.examples[0].id}`;
+        }
+        if (json.topGenre.examples[1]) {
+          document.getElementById('img-topGenre-examples1-i').src = json.topGenre.examples[1].i;
+          document.getElementById('link-topGenre-examples1').href = `http://localhost:3000/?card=${json.topGenre.examples[1].id}`;
+        }
+        if (json.topGenre.examples[2]) {
+          document.getElementById('img-topGenre-examples2-i').src = json.topGenre.examples[2].i;
+          document.getElementById('link-topGenre-examples2').href = `http://localhost:3000/?card=${json.topGenre.examples[2].id}`;
+        }
+
+        if (json.unwatchedMovies.examples[0]) {
+          document.getElementById('img-unwatchedMovies-examples0-i').src = json.unwatchedMovies.examples[0].i;
+          document.getElementById('link-unwatchedMovies-examples0').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[0].id}`;
+        }
+        if (json.unwatchedMovies.examples[1]) {
+          document.getElementById('img-unwatchedMovies-examples1-i').src = json.unwatchedMovies.examples[1].i;
+          document.getElementById('link-unwatchedMovies-examples1').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[1].id}`;
+        }
+        if (json.unwatchedMovies.examples[2]) {
+          document.getElementById('img-unwatchedMovies-examples2-i').src = json.unwatchedMovies.examples[2].i;
+          document.getElementById('link-unwatchedMovies-examples2').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[2].id}`;
+        }
+      }
+
+      // Вызываем функцию после загрузки данных
+      document.addEventListener('DOMContentLoaded', replaceValues);
+    </script>
   </body>
 </html>
