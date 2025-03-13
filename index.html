@@ -19,7 +19,7 @@
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide slide-1 title-text">
-          Ваши итоги <span id="span-year"></span> года с Лампой
+          Ваши итоги <span id="span-year" style="display: contents">2025</span> года с Лампой
         </div>
         <div class="swiper-slide slide-2">
           <div class="image-container">
@@ -132,7 +132,7 @@
     </script>    
     <script>
       function replaceValues(json) {
-        document.getElementById('span-year').innerHTML = json.year;
+        // document.getElementById('span-year').innerHTML = json.year.toString();
         document.getElementById('span-firstMovieOfYear-year').innerHTML = json.year;
         document.getElementById('span-firstMovieOfYear-date').innerHTML = json.firstMovieOfYear.date;
         document.getElementById('span-totalTime').innerHTML = json.totalTime;
