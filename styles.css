@@ -43,11 +43,11 @@ body {
 }
 
 .caption {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .swiper-slide img {
-  display: block;
+  display: none;
   width: 80%;
   max-width: 80%;
   height: auto;
@@ -144,6 +144,6 @@ body {
 }
 
 .title-text {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
