@@ -132,70 +132,124 @@
     </script>    
     <script>
       function replaceValues(json) {
-        // document.getElementById('span-year').innerHTML = json.year.toString();
-        document.getElementById('span-firstMovieOfYear-year').innerHTML = json.year;
-        document.getElementById('span-firstMovieOfYear-date').innerHTML = json.firstMovieOfYear.date;
-        document.getElementById('span-totalTime').innerHTML = json.totalTime;
-        document.getElementById('span-watchedMovies-count').innerHTML = json.watchedMovies.count;
-        document.getElementById('span-moviesWithReactions').innerHTML = json.moviesWithReactions;
-        document.getElementById('span-mostPopularReaction').innerHTML = json.mostPopularReaction;
-        document.getElementById('span-topGenre-genre').innerHTML = json.topGenre.genre.join(', ');
-        document.getElementById('span-mostPopularDay').innerHTML = json.mostPopularDay;
-        document.getElementById('span-mostPopularMonth').innerHTML = json.mostPopularMonth;
-        document.getElementById('span-maxTimeMovie-time').innerHTML = json.maxTimeMovie.time;
-        document.getElementById('span-unwatchedMovies-count').innerHTML = json.unwatchedMovies.count;
-        document.getElementById('span-cardsViewedOnly-count').innerHTML = json.cardsViewedOnly.count;
+        document.getElementById('span-year').innerHTML = json.year;
 
-        document.getElementById('img-firstMovieOfYear-movie-i').src = json.firstMovieOfYear.movie.i;
-        document.getElementById('img-maxTimeMovie-movie-i').src = json.maxTimeMovie.movie.i;
-
-        if (json.watchedMovies.examples[0]) {
-          document.getElementById('img-watchedMovies-examples0-i').style.display = 'block';
-          document.getElementById('img-watchedMovies-examples0-i').src = json.watchedMovies.examples[0].i;
-          document.getElementById('link-watchedMovies-examples0').href = `http://localhost:3000/?card=${json.watchedMovies.examples[0].id}`;
-        }
-        if (json.watchedMovies.examples[1]) {
-          document.getElementById('img-watchedMovies-examples1-i').style.display = 'block';
-          document.getElementById('img-watchedMovies-examples1-i').src = json.watchedMovies.examples[1].i;
-          document.getElementById('link-watchedMovies-examples1').href = `http://localhost:3000/?card=${json.watchedMovies.examples[1].id}`;
-        }
-        if (json.watchedMovies.examples[2]) {
-          document.getElementById('img-watchedMovies-examples2-i').style.display = 'block';
-          document.getElementById('img-watchedMovies-examples2-i').src = json.watchedMovies.examples[2].i;
-          document.getElementById('link-watchedMovies-examples2').href = `http://localhost:3000/?card=${json.watchedMovies.examples[2].id}`;
+        if (json && json.firstMovieOfYear) {
+          document.getElementById('span-firstMovieOfYear-year').innerHTML = json.year;
+          document.getElementById('span-firstMovieOfYear-date').innerHTML = json.firstMovieOfYear.date;
+          document.getElementById('img-firstMovieOfYear-movie-i').src = json.firstMovieOfYear.movie.i;
+          document.getElementById('img-firstMovieOfYear-movie-i').style.display = 'block';
+          document.getElementById('img-maxTimeMovie-movie-i').src = json.maxTimeMovie.movie.i;
+          document.getElementById('img-maxTimeMovie-movie-i').style.display = 'block';          
+        } else {
+          swiper.removeSlide(1);
         }
 
-        if (json.topGenre.examples[0]) {
-          document.getElementById('img-topGenre-examples0-i').style.display = 'block';
-          document.getElementById('img-topGenre-examples0-i').src = json.topGenre.examples[0].i;
-          document.getElementById('link-topGenre-examples0').href = `http://localhost:3000/?card=${json.topGenre.examples[0].id}`;
-        }
-        if (json.topGenre.examples[1]) {
-          document.getElementById('img-topGenre-examples1-i').style.display = 'block';
-          document.getElementById('img-topGenre-examples1-i').src = json.topGenre.examples[1].i;
-          document.getElementById('link-topGenre-examples1').href = `http://localhost:3000/?card=${json.topGenre.examples[1].id}`;
-        }
-        if (json.topGenre.examples[2]) {
-          document.getElementById('img-topGenre-examples2-i').style.display = 'block';
-          document.getElementById('img-topGenre-examples2-i').src = json.topGenre.examples[2].i;
-          document.getElementById('link-topGenre-examples2').href = `http://localhost:3000/?card=${json.topGenre.examples[2].id}`;
+        if (json && json.totalTime && json.totalTime > 0) {
+          document.getElementById('span-totalTime').innerHTML = json.totalTime;
+        } else {
+          swiper.removeSlide(2);
         }
 
-        if (json.unwatchedMovies.examples[0]) {
-          document.getElementById('img-unwatchedMovies-examples0-i').style.display = 'block';
-          document.getElementById('img-unwatchedMovies-examples0-i').src = json.unwatchedMovies.examples[0].i;
-          document.getElementById('link-unwatchedMovies-examples0').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[0].id}`;
+        if (json && json.watchedMovies && json.watchedMovies.count > 0) {
+          document.getElementById('span-watchedMovies-count').innerHTML = json.watchedMovies.count;
+          if (json.watchedMovies.examples[0]) {
+            document.getElementById('img-watchedMovies-examples0-i').style.display = 'block';
+            document.getElementById('img-watchedMovies-examples0-i').src = json.watchedMovies.examples[0].i;
+            document.getElementById('link-watchedMovies-examples0').href = `http://localhost:3000/?card=${json.watchedMovies.examples[0].id}`;
+          }
+          if (json.watchedMovies.examples[1]) {
+            document.getElementById('img-watchedMovies-examples1-i').style.display = 'block';
+            document.getElementById('img-watchedMovies-examples1-i').src = json.watchedMovies.examples[1].i;
+            document.getElementById('link-watchedMovies-examples1').href = `http://localhost:3000/?card=${json.watchedMovies.examples[1].id}`;
+          }
+          if (json.watchedMovies.examples[2]) {
+            document.getElementById('img-watchedMovies-examples2-i').style.display = 'block';
+            document.getElementById('img-watchedMovies-examples2-i').src = json.watchedMovies.examples[2].i;
+            document.getElementById('link-watchedMovies-examples2').href = `http://localhost:3000/?card=${json.watchedMovies.examples[2].id}`;
+          }
+        } else {
+          swiper.removeSlide(3);
         }
-        if (json.unwatchedMovies.examples[1]) {
-          document.getElementById('img-unwatchedMovies-examples1-i').style.display = 'block';
-          document.getElementById('img-unwatchedMovies-examples1-i').src = json.unwatchedMovies.examples[1].i;
-          document.getElementById('link-unwatchedMovies-examples1').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[1].id}`;
+
+        if (json && json.moviesWithReactions) {
+          document.getElementById('span-moviesWithReactions').innerHTML = json.moviesWithReactions;
+        } else {
+          swiper.removeSlide(4);
         }
-        if (json.unwatchedMovies.examples[2]) {
-          document.getElementById('img-unwatchedMovies-examples2-i').style.display = 'block';
-          document.getElementById('img-unwatchedMovies-examples2-i').src = json.unwatchedMovies.examples[2].i;
-          document.getElementById('link-unwatchedMovies-examples2').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[2].id}`;
+
+        if (json && json.mostPopularReaction) {
+          document.getElementById('span-mostPopularReaction').innerHTML = json.mostPopularReaction;
+        } else {
+          swiper.removeSlide(5);
         }
+
+        if (json && json.topGenre && json.topGenre.genre) {
+          document.getElementById('span-topGenre-genre').innerHTML = json.topGenre.genre.join(', '); 
+          if (json.topGenre.examples[0]) {
+            document.getElementById('img-topGenre-examples0-i').style.display = 'block';
+            document.getElementById('img-topGenre-examples0-i').src = json.topGenre.examples[0].i;
+            document.getElementById('link-topGenre-examples0').href = `http://localhost:3000/?card=${json.topGenre.examples[0].id}`;
+          }
+          if (json.topGenre.examples[1]) {
+            document.getElementById('img-topGenre-examples1-i').style.display = 'block';
+            document.getElementById('img-topGenre-examples1-i').src = json.topGenre.examples[1].i;
+            document.getElementById('link-topGenre-examples1').href = `http://localhost:3000/?card=${json.topGenre.examples[1].id}`;
+          }
+          if (json.topGenre.examples[2]) {
+            document.getElementById('img-topGenre-examples2-i').style.display = 'block';
+            document.getElementById('img-topGenre-examples2-i').src = json.topGenre.examples[2].i;
+            document.getElementById('link-topGenre-examples2').href = `http://localhost:3000/?card=${json.topGenre.examples[2].id}`;
+          }          
+        } else {
+          swiper.removeSlide(6);
+        }
+
+        if (json && json.mostPopularDay) {
+          document.getElementById('span-mostPopularDay').innerHTML = json.mostPopularDay;  
+        } else {
+          swiper.removeSlide(7);
+        }
+        
+        if (json && json.mostPopularMonth) {
+          document.getElementById('span-mostPopularMonth').innerHTML = json.mostPopularMonth;  
+        } else {
+          swiper.removeSlide(8);
+        }
+        
+        if (json && json.maxTimeMovie) {
+          document.getElementById('span-maxTimeMovie-time').innerHTML = json.maxTimeMovie.time;          
+        } else {
+          swiper.removeSlide(9);
+        }
+
+        if (json && json.unwatchedMovies && json.unwatchedMovies.count > 0) {
+          document.getElementById('span-unwatchedMovies-count').innerHTML = json.unwatchedMovies.count;
+          if (json.unwatchedMovies.examples[0]) {
+            document.getElementById('img-unwatchedMovies-examples0-i').style.display = 'block';
+            document.getElementById('img-unwatchedMovies-examples0-i').src = json.unwatchedMovies.examples[0].i;
+            document.getElementById('link-unwatchedMovies-examples0').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[0].id}`;
+          }
+          if (json.unwatchedMovies.examples[1]) {
+            document.getElementById('img-unwatchedMovies-examples1-i').style.display = 'block';
+            document.getElementById('img-unwatchedMovies-examples1-i').src = json.unwatchedMovies.examples[1].i;
+            document.getElementById('link-unwatchedMovies-examples1').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[1].id}`;
+          }
+          if (json.unwatchedMovies.examples[2]) {
+            document.getElementById('img-unwatchedMovies-examples2-i').style.display = 'block';
+            document.getElementById('img-unwatchedMovies-examples2-i').src = json.unwatchedMovies.examples[2].i;
+            document.getElementById('link-unwatchedMovies-examples2').href = `http://localhost:3000/?card=${json.unwatchedMovies.examples[2].id}`;
+          }
+        } else {
+          swiper.removeSlide(10);
+        }
+
+        if (json && json.cardsViewedOnly && json.cardsViewedOnly.count > 0) {
+          document.getElementById('span-cardsViewedOnly-count').innerHTML = json.cardsViewedOnly.count;
+        } else {
+          swiper.removeSlide(11);
+        }
+        
       }
     </script>    
     <script>
@@ -209,22 +263,21 @@
          if (xhr.readyState === 4 && xhr.status === 200) {
            eval(xhr.responseText);
 
-           if (json) {
-             replaceValues(json);
-           }
+           replaceValues(json);
          }
        };
        xhr.send();
      } else {
-      swiper.removeSlide(1);
-      swiper.removeSlide(2);
-      swiper.removeSlide(3);
-      swiper.removeSlide(4);
-      swiper.removeSlide(5);
-      swiper.removeSlide(6);
-      swiper.removeSlide(7);
-      swiper.removeSlide(8);
-      swiper.removeSlide(9);
+      var json = {'year': 2025};
+      replaceValues(json);
+      // swiper.removeSlide(2);
+      // swiper.removeSlide(3);
+      // swiper.removeSlide(4);
+      // swiper.removeSlide(5);
+      // swiper.removeSlide(6);
+      // swiper.removeSlide(7);
+      // swiper.removeSlide(8);
+      // swiper.removeSlide(9);
      }
     </script>
   </body>
