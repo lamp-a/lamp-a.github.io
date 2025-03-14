@@ -44,6 +44,7 @@ body {
 
 .caption {
   font-size: 1.5rem;
+  width: 80%
 }
 
 .swiper-slide img {
@@ -60,51 +61,51 @@ body {
 }
 
 .slide-1 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/9736426/7d9bd223-3bba-4b70-87ec-6bb3b281ff9c/orig');
+  background-image: url('back/slide1.jpeg');
 }
 
 .slide-2 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/1635340/fda97e6a-3a49-4450-8a60-ab0a6bd477f2/orig');
+  background-image: url('back/slide2.jpeg');
 }
 
 .slide-3 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12373972/46155a4c-ecc4-465f-b07f-44d3d6aab1f3/orig');
+  background-image: url('back/slide3.jpeg');
 }
 
 .slide-4 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12602567/c857cee5-90a7-4bdf-b559-a72a63d64b80/orig');
+  background-image: url('back/slide4.jpeg');
 }
 
 .slide-5 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12602567/d10795a1-a7ab-45a2-9050-2b94934c4b2f/orig');
+  background-image: url('back/slide5.jpeg');
 }
 
 .slide-6 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12602567/27526ac1-761b-43da-95c6-12a1e0f85988/orig');
+  background-image: url('back/slide6.jpeg');
 }
 
 .slide-7 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12373972/f2a26bb4-10fe-4431-afea-efee257896e1/orig');
+  background-image: url('back/slide7.jpeg');
 }
 
 .slide-8 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12373972/2c3b1613-f9f5-4a11-82bb-d999b94b662b/orig');
+  background-image: url('back/slide8.jpeg');
 }
 
 .slide-9 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/12602567/26106185-e1c2-4b98-ad9e-bf25e8a0f3c4/orig');
+  background-image: url('back/slide9.jpeg');
 }
 
 .slide-10 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/1635340/321a4223-b551-4412-8dd8-a69b9dd0fd4c/orig');
+  background-image: url('back/slide10.jpeg');
 }
 
 .slide-11 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/1635340/72e1caa1-aaf3-4803-9bec-7ec458c38af1/orig');
+  background-image: url('back/slide11.jpeg');
 }
 
 .slide-12 {
-  background-image: url('https://avatars.mds.yandex.net/get-lpc/10116223/a9d9ebff-0865-428b-ad27-f189c77d9746/orig');
+  background-image: url('back/slide12.jpeg');
 }
 
 /* Изменяем цвет кнопок и пагинации на белый */
@@ -124,12 +125,13 @@ body {
 .image-container {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .image-container a {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .image-container img {
@@ -137,6 +139,7 @@ body {
   height: auto;
   cursor: pointer;
   display: none;
+  border-radius: 1em;
 }
 
 .large-text {
@@ -147,4 +150,5 @@ body {
 .title-text {
   font-size: 2rem;
   font-weight: bold;
+  width: 70%;
 }
